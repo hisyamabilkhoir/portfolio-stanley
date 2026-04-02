@@ -8,9 +8,9 @@ class ParticleSystem {
     if (!this.canvas) return;
     this.ctx = this.canvas.getContext('2d');
     this.particles = [];
-    this.mouse = { x: null, y: null, radius: 150 };
-    this.particleCount = window.innerWidth < 768 ? 50 : 120;
-    
+    this.mouse = { x: null, y: null, radius: 180 };
+    this.particleCount = window.innerWidth < 768 ? 500 : 700;
+
     this.init();
     this.animate();
     this.addListeners();
@@ -48,7 +48,7 @@ class ParticleSystem {
 
   animate() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    
+
     for (let i = 0; i < this.particles.length; i++) {
       this.particles[i].update(this.mouse);
       this.particles[i].draw(this.ctx);
@@ -61,7 +61,7 @@ class ParticleSystem {
 
         if (distance < 120) {
           this.ctx.beginPath();
-          this.ctx.strokeStyle = `rgba(201, 167, 78, ${0.2 - distance/120})`;
+          this.ctx.strokeStyle = `rgba(201, 167, 78, ${0.2 - distance / 120})`;
           this.ctx.lineWidth = 0.5;
           this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
           this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
@@ -69,7 +69,7 @@ class ParticleSystem {
         }
       }
     }
-    
+
     requestAnimationFrame(this.animate.bind(this));
   }
 }
@@ -105,12 +105,12 @@ class Particle {
       let dx = mouse.x - this.x;
       let dy = mouse.y - this.y;
       let distance = Math.sqrt(dx * dx + dy * dy);
-      
+
       if (distance < mouse.radius) {
         const force = (mouse.radius - distance) / mouse.radius;
         const directionX = (dx / distance) * force * this.density;
         const directionY = (dy / distance) * force * this.density;
-        
+
         this.x -= directionX;
         this.y -= directionY;
       }

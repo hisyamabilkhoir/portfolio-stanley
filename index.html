@@ -1,753 +1,712 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Kaisar Stanley Eleazar — Film Producer. Crafting meaningful stories through impactful execution. Explore the cinematic portfolio of an emerging Indonesian film producer."
-    />
-    <meta
-      name="keywords"
-      content="film producer, Indonesian cinema, Kaisar Stanley Eleazar, film portfolio, cinematic storytelling"
-    />
-    <meta name="author" content="Kaisar Stanley Eleazar" />
-    <meta name="theme-color" content="#050A14" />
 
-    <meta
-      property="og:title"
-      content="Kaisar Stanley Eleazar — Film Producer"
-    />
-    <meta
-      property="og:description"
-      content="Crafting meaningful stories through impactful execution."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/images/hero-bg.jpg" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Kaisar Stanley Eleazar — Film Producer. Crafting meaningful stories through impactful execution. Explore the cinematic portfolio of an emerging Indonesian film producer." />
+  <meta name="keywords"
+    content="film producer, Indonesian cinema, Kaisar Stanley Eleazar, film portfolio, cinematic storytelling,  Kaisar Stanley, Kaisar, Stanley, Eleazar, Film, Producer, Indonesian, Cinema, Storytelling, Portfolio, Cinematic, " />
+  <meta name="author" content="Kaisar Stanley Eleazar" />
+  <meta name="theme-color" content="#050A14" />
 
-    <title>Kaisar Stanley Eleazar — Film Producer</title>
+  <meta property="og:title" content="Kaisar Stanley Eleazar — Film Producer" />
+  <meta property="og:description" content="Crafting meaningful stories through impactful execution." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero-bg.jpg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <title>Kaisar Stanley Eleazar — Film Producer</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- Scroll Progress -->
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
 
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-      <span class="preloader__logo">Kaisar Stanley</span>
-      <div class="preloader__bar"><div class="preloader__fill"></div></div>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <span class="preloader__logo">Kaisar Stanley</span>
+    <div class="preloader__bar">
+      <div class="preloader__fill"></div>
+    </div>
+  </div>
+
+  <!-- Grain & Vignette -->
+  <div class="grain" id="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="/" class="navbar__logo" id="navLogo">KSE</a>
+      <ul class="navbar__links" id="navLinks">
+        <li>
+          <a href="#hero" class="navbar__link active" data-section="hero">Home</a>
+        </li>
+        <li>
+          <a href="#about" class="navbar__link" data-section="about">About</a>
+        </li>
+        <li>
+          <a href="#experience" class="navbar__link" data-section="experience">Experience</a>
+        </li>
+        <li>
+          <a href="#portfolio" class="navbar__link" data-section="portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a href="#achievements" class="navbar__link" data-section="achievements">Achievements</a>
+        </li>
+        <li>
+          <a href="#blog" class="navbar__link" data-section="blog">Blog</a>
+        </li>
+        <li>
+          <a href="#contact" class="navbar__link" data-section="contact">Contact</a>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <!-- Interactive Particle Background (Reference Style) -->
+    <canvas id="heroParticles" class="hero__particles" aria-hidden="true"></canvas>
+
+    <!-- Cinematic Gradient Overlay -->
+    <div class="hero__overlay"></div>
+
+    <!-- Split content: Left text + Right photo -->
+    <div class="hero__split container">
+      <!-- Left: Text -->
+      <div class="hero__text">
+        <!-- Status Badge (Reference Style) -->
+        <div class="hero__status-badge reveal">
+          <span class="hero__status-dot"></span>
+          <span class="hero__status-text">Available for Projects &bull; Bandung</span>
+        </div>
+
+        <h1 class="heading-xl hero__title">Kaisar Stanley<br />Eleazar</h1>
+        <p class="hero__role">Film Producer</p>
+        <p class="hero__desc">
+          Crafting meaningful stories through impactful execution
+        </p>
+        <div class="hero__cta">
+          <a href="#portfolio" class="btn" id="heroCta">
+            View Portfolio
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <a href="https://wa.me/6281234567890" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Photo frame -->
+      <div class="hero__photo" id="heroPortrait">
+        <div class="hero__photo-frame">
+          <img src="assets/images/portrait.jpg" alt="Kaisar Stanley Eleazar" />
+          <div class="hero__photo-border"></div>
+        </div>
+        <span class="hero__photo-badge">
+          <span class="hero__photo-badge-dot"></span>
+          Film Producer &bull; ISBI Bandung
+        </span>
+      </div>
     </div>
 
-    <!-- Grain & Vignette -->
-    <div class="grain" id="grain" aria-hidden="true"></div>
-    <div class="vignette" aria-hidden="true"></div>
+    <div class="hero__scroll">
+      <span class="hero__scroll-label">Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
 
-    <!-- ========== NAVBAR ========== -->
-    <nav
-      class="navbar"
-      id="navbar"
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <div class="container navbar__inner">
-        <a href="/" class="navbar__logo" id="navLogo">KSE</a>
-        <ul class="navbar__links" id="navLinks">
-          <li>
-            <a href="#hero" class="navbar__link active" data-section="hero"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="#about" class="navbar__link" data-section="about">About</a>
-          </li>
-          <li>
-            <a href="#experience" class="navbar__link" data-section="experience"
-              >Experience</a
-            >
-          </li>
-          <li>
-            <a href="#portfolio" class="navbar__link" data-section="portfolio"
-              >Portfolio</a
-            >
-          </li>
-          <li>
-            <a
-              href="#achievements"
-              class="navbar__link"
-              data-section="achievements"
-              >Achievements</a
-            >
-          </li>
-          <li>
-            <a href="#contact" class="navbar__link" data-section="contact"
-              >Contact</a
-            >
-          </li>
-        </ul>
-        <button
-          class="hamburger"
-          id="hamburger"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-
-    <!-- ========== HERO ========== -->
-    <section class="hero" id="hero" aria-label="Hero">
-      <!-- Interactive Particle Background (Reference Style) -->
-      <canvas id="heroParticles" class="hero__particles" aria-hidden="true"></canvas>
-      
-      <!-- Cinematic Gradient Overlay -->
-      <div class="hero__overlay"></div>
-
-      <!-- Split content: Left text + Right photo -->
-      <div class="hero__split container">
-        <!-- Left: Text -->
-        <div class="hero__text">
-          <!-- Status Badge (Reference Style) -->
-          <div class="hero__status-badge reveal">
-            <span class="hero__status-dot"></span>
-            <span class="hero__status-text">Available for Projects &bull; Bandung</span>
-          </div>
-
-          <h1 class="heading-xl hero__title">Kaisar Stanley<br />Eleazar</h1>
-          <p class="hero__role">Film Producer</p>
-          <p class="hero__desc">
-            Crafting meaningful stories through impactful execution
+  <!-- ========== ABOUT ========== -->
+  <section class="about section-pad" id="about" aria-label="About">
+    <div class="glow-orb glow-orb--gold" style="width: 300px; height: 300px; top: 10%; right: -80px" aria-hidden="true">
+    </div>
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__img-wrap reveal">
+          <img src="assets/images/portrait.jpg" alt="Kaisar Stanley Eleazar — portrait" loading="lazy" />
+        </div>
+        <div class="reveal d2">
+          <span class="about__eyebrow">About</span>
+          <h2 class="heading-lg about__title">Philosophy &amp; Vision</h2>
+          <p class="about__philosophy">
+            &ldquo;I believe film is not only about great stories, but how
+            execution creates impact, meaning, and relatability.&rdquo;
           </p>
-          <div class="hero__cta">
-            <a href="#portfolio" class="btn" id="heroCta">
-              View Portfolio
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
-            <a
-              href="https://wa.me/6281234567890"
-              class="btn btn--ghost"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              >
-                <path
-                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                />
-              </svg>
-              Chat on WhatsApp
-            </a>
-          </div>
-        </div>
-
-        <!-- Right: Photo frame -->
-        <div class="hero__photo" id="heroPortrait">
-          <div class="hero__photo-frame">
-            <img
-              src="assets/images/portrait.jpg"
-              alt="Kaisar Stanley Eleazar"
-            />
-            <div class="hero__photo-border"></div>
-          </div>
-          <span class="hero__photo-badge">
-            <span class="hero__photo-badge-dot"></span>
-            Film Producer &bull; ISBI Bandung
-          </span>
-        </div>
-      </div>
-
-      <div class="hero__scroll">
-        <span class="hero__scroll-label">Scroll</span>
-        <div class="hero__scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- ========== ABOUT ========== -->
-    <section class="about section-pad" id="about" aria-label="About">
-      <div
-        class="glow-orb glow-orb--gold"
-        style="width: 300px; height: 300px; top: 10%; right: -80px"
-        aria-hidden="true"
-      ></div>
-      <div class="container">
-        <div class="about__grid">
-          <div class="about__img-wrap reveal">
-            <img
-              src="assets/images/portrait.jpg"
-              alt="Kaisar Stanley Eleazar — portrait"
-              loading="lazy"
-            />
-          </div>
-          <div class="reveal d2">
-            <span class="about__eyebrow">About</span>
-            <h2 class="heading-lg about__title">Philosophy &amp; Vision</h2>
-            <p class="about__philosophy">
-              &ldquo;I believe film is not only about great stories, but how
-              execution creates impact, meaning, and relatability.&rdquo;
-            </p>
-            <p class="body-text">
-              With a deep passion for cinematic storytelling and a disciplined
-              approach to production, I strive to create films that resonate
-              with audiences on both an emotional and intellectual level. Every
-              project is an opportunity to push boundaries and deliver
-              meaningful narratives.
-            </p>
-            <div class="about__badge">
-              <span class="about__badge-line"></span>
-              <span class="about__badge-text"
-                >Next Generation Indonesian Film Producer</span
-              >
-            </div>
+          <p class="body-text">
+            With a deep passion for cinematic storytelling and a disciplined
+            approach to production, I strive to create films that resonate
+            with audiences on both an emotional and intellectual level. Every
+            project is an opportunity to push boundaries and deliver
+            meaningful narratives.
+          </p>
+          <div class="about__badge">
+            <span class="about__badge-line"></span>
+            <span class="about__badge-text">Next Generation Indonesian Film Producer</span>
+            <span class="about__badge-line"></span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ========== EXPERIENCE ========== -->
-    <section
-      class="experience section-pad"
-      id="experience"
-      aria-label="Experience"
-    >
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="heading-lg">Experience &amp; Skills</h2>
-          <p class="subtitle">Education &bull; Expertise &bull; Capabilities</p>
-          <hr class="section-divider" />
-        </div>
-        <div class="experience__grid">
-          <div class="experience__card reveal d1">
-            <div class="experience__card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              >
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                <path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5" />
-              </svg>
-            </div>
-            <h3 class="experience__card-title">Education</h3>
-            <p class="experience__card-text">
-              Institut Seni Budaya Indonesia Bandung
-            </p>
-            <p
-              class="experience__card-text"
-              style="
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="experience section-pad" id="experience" aria-label="Experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="heading-lg">Experience &amp; Skills</h2>
+        <p class="subtitle">Education &bull; Expertise &bull; Capabilities</p>
+        <hr class="section-divider" />
+      </div>
+      <div class="experience__grid">
+        <div class="experience__card reveal d1">
+          <div class="experience__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5" />
+            </svg>
+          </div>
+          <h3 class="experience__card-title">Education</h3>
+          <p class="experience__card-text">
+            Institut Seni Budaya Indonesia Bandung
+          </p>
+          <p class="experience__card-text" style="
                 color: var(--gold);
                 font-size: 0.8rem;
                 letter-spacing: 0.06em;
                 margin-top: 4px;
-              "
-            >
-              2022 — Present
-            </p>
-          </div>
-          <div class="experience__card reveal d2">
-            <div class="experience__card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <h3 class="experience__card-title">Core Skills</h3>
-            <p class="experience__card-text">
-              Multifaceted expertise across production disciplines.
-            </p>
-            <div class="experience__tags">
-              <span class="experience__tag">Leadership</span>
-              <span class="experience__tag">Money Management</span>
-              <span class="experience__tag">People Management</span>
-              <span class="experience__tag">Storytelling</span>
-              <span class="experience__tag">Film Marketing</span>
-            </div>
-          </div>
-          <div class="experience__card reveal d3">
-            <div class="experience__card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="2.18" />
-                <line x1="7" y1="2" x2="7" y2="22" />
-                <line x1="17" y1="2" x2="17" y2="22" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <line x1="2" y1="7" x2="7" y2="7" />
-                <line x1="2" y1="17" x2="7" y2="17" />
-                <line x1="17" y1="7" x2="22" y2="7" />
-                <line x1="17" y1="17" x2="22" y2="17" />
-              </svg>
-            </div>
-            <h3 class="experience__card-title">Production Mastery</h3>
-            <p class="experience__card-text">
-              End-to-end film production management—from pre-production planning
-              through post-production delivery. Skilled in budgeting,
-              scheduling, and team coordination.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== PORTFOLIO ========== -->
-    <section
-      class="portfolio section-pad"
-      id="portfolio"
-      aria-label="Film portfolio"
-    >
-      <div
-        class="glow-orb glow-orb--gold"
-        style="width: 380px; height: 380px; bottom: 5%; left: -140px"
-        aria-hidden="true"
-      ></div>
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="heading-lg">Film Portfolio</h2>
-          <p class="subtitle">
-            Selected Works &bull; Short Films &bull; Productions
+              ">
+            2022 — Present
           </p>
-          <hr class="section-divider" />
         </div>
-        <div class="portfolio__grid">
-          <article class="portfolio__card reveal d1">
-            <img
-              class="portfolio__card-img"
-              src="assets/images/melukis-ikatan.jpg"
-              alt="Melukis Ikatan"
-              loading="lazy"
-            />
-            <div class="portfolio__card-overlay">
-              <span class="portfolio__card-role">Producer</span>
-              <h3 class="portfolio__card-title">Melukis Ikatan</h3>
-              <p class="portfolio__card-desc">
-                A deeply personal narrative exploring the invisible threads that
-                bind relationships through art and emotion.
-              </p>
-              <span class="portfolio__card-cta"
-                >View Details
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" /></svg
-              ></span>
-            </div>
-          </article>
-
-          <article class="portfolio__card reveal d2">
-            <img
-              class="portfolio__card-img"
-              src="assets/images/rasindeu.jpg"
-              alt="Rasindeu"
-              loading="lazy"
-            />
-            <div class="portfolio__card-overlay">
-              <span class="portfolio__card-role">Producer</span>
-              <h3 class="portfolio__card-title">Rasindeu</h3>
-              <p class="portfolio__card-desc">
-                A cultural exploration rooted in Sundanese traditions, blending
-                heritage with contemporary storytelling.
-              </p>
-              <span class="portfolio__card-cta"
-                >View Details
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" /></svg
-              ></span>
-            </div>
-          </article>
-
-          <article class="portfolio__card reveal d3">
-            <img
-              class="portfolio__card-img"
-              src="assets/images/kujang-sasaka.jpg"
-              alt="Kujang Sasaka Bwaga Sunda"
-              loading="lazy"
-            />
-            <div class="portfolio__card-overlay">
-              <span class="portfolio__card-role">Producer</span>
-              <h3 class="portfolio__card-title">Kujang Sasaka Bwaga Sunda</h3>
-              <p class="portfolio__card-desc">
-                An epic narrative inspired by the legendary Kujang, exploring
-                Sundanese warrior legacy and cultural identity.
-              </p>
-              <span class="portfolio__card-cta"
-                >View Details
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" /></svg
-              ></span>
-            </div>
-          </article>
-
-          <article class="portfolio__card reveal d4">
-            <img
-              class="portfolio__card-img"
-              src="assets/images/seperti-sebuah-nama.jpg"
-              alt="Seperti Sebuah Nama"
-              loading="lazy"
-            />
-            <div class="portfolio__card-overlay">
-              <span class="portfolio__card-role">Producer</span>
-              <h3 class="portfolio__card-title">Seperti Sebuah Nama</h3>
-              <p class="portfolio__card-desc">
-                An introspective journey about identity, meaning, and the weight
-                a name carries through generations.
-              </p>
-              <span class="portfolio__card-cta"
-                >View Details
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" /></svg
-              ></span>
-            </div>
-          </article>
-
-          <article class="portfolio__card reveal d5">
-            <img
-              class="portfolio__card-img"
-              src="assets/images/musicians-requiem.jpg"
-              alt="A Musician's Requiem"
-              loading="lazy"
-            />
-            <div class="portfolio__card-overlay">
-              <span class="portfolio__card-role">Producer</span>
-              <h3 class="portfolio__card-title">A Musician&rsquo;s Requiem</h3>
-              <p class="portfolio__card-desc">
-                A haunting art-house piece that follows a musician's final
-                creative act, merging sound and visual poetry.
-              </p>
-              <span class="portfolio__card-cta"
-                >View Details
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" /></svg
-              ></span>
-            </div>
-          </article>
-
-          <article class="portfolio__card reveal d6">
-            <img
-              class="portfolio__card-img"
-              src="assets/images/kangs-birthday.jpg"
-              alt="Kang's Birthday"
-              loading="lazy"
-            />
-            <div class="portfolio__card-overlay">
-              <span class="portfolio__card-role">Producer</span>
-              <h3 class="portfolio__card-title">Kang&rsquo;s Birthday</h3>
-              <p class="portfolio__card-desc">
-                A warm yet bittersweet slice-of-life short capturing the quiet
-                significance of an ordinary celebration.
-              </p>
-              <span class="portfolio__card-cta"
-                >View Details
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" /></svg
-              ></span>
-            </div>
-          </article>
+        <div class="experience__card reveal d2">
+          <div class="experience__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3 class="experience__card-title">Core Skills</h3>
+          <p class="experience__card-text">
+            Multifaceted expertise across production disciplines.
+          </p>
+          <div class="experience__tags">
+            <span class="experience__tag">Leadership</span>
+            <span class="experience__tag">Money Management</span>
+            <span class="experience__tag">People Management</span>
+            <span class="experience__tag">Storytelling</span>
+            <span class="experience__tag">Film Marketing</span>
+          </div>
+        </div>
+        <div class="experience__card reveal d3">
+          <div class="experience__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" />
+              <line x1="7" y1="2" x2="7" y2="22" />
+              <line x1="17" y1="2" x2="17" y2="22" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <line x1="2" y1="7" x2="7" y2="7" />
+              <line x1="2" y1="17" x2="7" y2="17" />
+              <line x1="17" y1="7" x2="22" y2="7" />
+              <line x1="17" y1="17" x2="22" y2="17" />
+            </svg>
+          </div>
+          <h3 class="experience__card-title">Production Mastery</h3>
+          <p class="experience__card-text">
+            End-to-end film production management—from pre-production planning
+            through post-production delivery. Skilled in budgeting,
+            scheduling, and team coordination.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ========== OTHER PROJECTS ========== -->
-    <section
-      class="other-projects section-pad"
-      id="other-projects"
-      aria-label="Other projects"
-    >
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="heading-lg">Other Projects</h2>
-          <p class="subtitle">Beyond Cinema &bull; Diverse Productions</p>
-          <hr class="section-divider" />
-        </div>
-        <div class="other-projects__grid">
-          <article class="other-projects__card reveal d1">
-            <img
-              class="other-projects__card-img"
-              src="assets/images/kiri-kanan-podcast.jpg"
-              alt="Kiri Kanan Podcast"
-              loading="lazy"
-            />
-            <div class="other-projects__card-body">
-              <span class="other-projects__card-role">Producer</span>
-              <h3 class="other-projects__card-title">Kiri Kanan Podcast</h3>
-              <p class="other-projects__card-desc">
-                A thought-provoking podcast exploring diverse perspectives in
-                Indonesian culture and creative industry.
-              </p>
-            </div>
-          </article>
-          <article class="other-projects__card reveal d2">
-            <img
-              class="other-projects__card-img"
-              src="assets/images/squad-game.jpg"
-              alt="Squad Game"
-              loading="lazy"
-            />
-            <div class="other-projects__card-body">
-              <span class="other-projects__card-role">Assistant Producer</span>
-              <h3 class="other-projects__card-title">Squad Game</h3>
-              <p class="other-projects__card-desc">
-                An engaging game show production combining entertainment with
-                strategic competition and team dynamics.
-              </p>
-            </div>
-          </article>
-        </div>
+  <!-- ========== PORTFOLIO ========== -->
+  <section class="portfolio section-pad" id="portfolio" aria-label="Film portfolio">
+    <div class="glow-orb glow-orb--gold" style="width: 380px; height: 380px; bottom: 5%; left: -140px"
+      aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="heading-lg">Film Portfolio</h2>
+        <p class="subtitle">
+          Selected Works &bull; Short Films &bull; Productions
+        </p>
+        <hr class="section-divider" />
       </div>
-    </section>
+      <div class="portfolio__grid">
+        <article class="portfolio__card reveal d1">
+          <img class="portfolio__card-img" src="assets/images/melukis-ikatan.jpg" alt="Melukis Ikatan" loading="lazy" />
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-role">Producer</span>
+            <h3 class="portfolio__card-title">Melukis Ikatan</h3>
+            <p class="portfolio__card-desc">
+              A deeply personal narrative exploring the invisible threads that
+              bind relationships through art and emotion.
+            </p>
+            <span class="portfolio__card-cta">View Details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+        </article>
 
-    <!-- ========== ACHIEVEMENTS ========== -->
-    <section
-      class="achievements section-pad"
-      id="achievements"
-      aria-label="Achievements"
-    >
-      <div
-        class="glow-orb glow-orb--gold"
-        style="width: 280px; height: 280px; top: 20%; right: -60px"
-        aria-hidden="true"
-      ></div>
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="heading-lg">Achievements</h2>
-          <p class="subtitle">Growth &bull; Evolution &bull; Milestones</p>
-          <hr class="section-divider" />
-        </div>
+        <article class="portfolio__card reveal d2" data-year="2024" data-category="Drama / Cultural"
+          data-full-desc="Rasindeu is a poignant exploration of Sundanese heritage and the struggle to preserve tradition in a rapidly globalizing world. The film follows a young protagonist's journey through ancestral lands, uncovering secrets that bridge the gap between past and future.">
+          <img class="portfolio__card-img" src="assets/images/rasindeu.jpg" alt="Rasindeu" loading="lazy" />
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-role">Producer</span>
+            <h3 class="portfolio__card-title">Rasindeu</h3>
+            <p class="portfolio__card-desc">
+              A cultural exploration rooted in Sundanese traditions, blending
+              heritage with contemporary storytelling.
+            </p>
+            <span class="portfolio__card-cta">View Details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+        </article>
 
-        <blockquote class="achievements__quote reveal">
-          From failure to growth, these works mark my evolution as a producer.
-        </blockquote>
+        <article class="portfolio__card reveal d3" data-year="2023" data-category="Action / History"
+          data-full-desc="Kujang Sasaka Bwaga Sunda is a high-octane cinematic experience that delves deep into the mythos of the Sundanese warrior. Centered around the legendary Kujang weapon, the story weaves together historical reverence with modern production values to showcase the strength and honor of Indonesian legends.">
+          <img class="portfolio__card-img" src="assets/images/kujang-sasaka.jpg" alt="Kujang Sasaka Bwaga Sunda"
+            loading="lazy" />
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-role">Producer</span>
+            <h3 class="portfolio__card-title">Kujang Sasaka Bwaga Sunda</h3>
+            <p class="portfolio__card-desc">
+              An epic narrative inspired by the legendary Kujang, exploring
+              Sundanese warrior legacy and cultural identity.
+            </p>
+            <span class="portfolio__card-cta">View Details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+        </article>
 
-        <!-- Timeline -->
-        <div class="timeline">
-          <div class="timeline__item timeline__item--right reveal d1">
-            <div class="timeline__dot">
-              <span class="timeline__number">01</span>
+        <article class="portfolio__card reveal d4" data-year="2023" data-category="Experimental / Philosophical"
+          data-full-desc="Seperti Sebuah Nama (Like A Name) is a deep-dive into the weight of identity and naming. This experimental short film explores how a simple label can shape an entire lifetime, examining the interplay between public perception and inner reality through atmospheric visuals and minimal dialogue.">
+          <img class="portfolio__card-img" src="assets/images/seperti-sebuah-nama.jpg" alt="Seperti Sebuah Nama"
+            loading="lazy" />
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-role">Producer</span>
+            <h3 class="portfolio__card-title">Seperti Sebuah Nama</h3>
+            <p class="portfolio__card-desc">
+              An introspective journey about identity, meaning, and the weight
+              a name carries through generations.
+            </p>
+            <span class="portfolio__card-cta">View Details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+        </article>
+
+        <article class="portfolio__card reveal d5" data-year="2024" data-category="Art-House / Drama"
+          data-full-desc="A Musician’s Requiem captures the final stages of a virtuoso's career and life. Merging cinematic visual poetry with a powerful orchestral score, the film serves as both a farewell to art and a testament to its immortality, highlighting the sacrifices made in the pursuit of creative perfection.">
+          <img class="portfolio__card-img" src="assets/images/musicians-requiem.jpg" alt="A Musician's Requiem"
+            loading="lazy" />
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-role">Producer</span>
+            <h3 class="portfolio__card-title">A Musician&rsquo;s Requiem</h3>
+            <p class="portfolio__card-desc">
+              A haunting art-house piece that follows a musician's final
+              creative act, merging sound and visual poetry.
+            </p>
+            <span class="portfolio__card-cta">View Details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+        </article>
+
+        <article class="portfolio__card reveal d6" data-year="2024" data-category="Slice-of-Life / Drama"
+          data-full-desc="Kang’s Birthday is a gentle, intimate look at a milestone celebration within a humble household. The film focuses on the emotional nuances of small gestures and the profound impact of belonging, proving that the most ordinary days often hold the most extraordinary meaning.">
+          <img class="portfolio__card-img" src="assets/images/kangs-birthday.jpg" alt="Kang's Birthday"
+            loading="lazy" />
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-role">Producer</span>
+            <h3 class="portfolio__card-title">Kang&rsquo;s Birthday</h3>
+            <p class="portfolio__card-desc">
+              A warm yet bittersweet slice-of-life short capturing the quiet
+              significance of an ordinary celebration.
+            </p>
+            <span class="portfolio__card-cta">View Details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== ACHIEVEMENTS ========== -->
+  <section class="achievements section-pad" id="achievements" aria-label="Achievements">
+    <div class="glow-orb glow-orb--gold" style="width: 280px; height: 280px; top: 20%; right: -60px" aria-hidden="true">
+    </div>
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="heading-lg">Achievements</h2>
+        <p class="subtitle">Growth &bull; Evolution &bull; Milestones</p>
+        <hr class="section-divider" />
+      </div>
+
+      <blockquote class="achievements__quote reveal">
+        From failure to growth, these works mark my evolution as a producer.
+      </blockquote>
+
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="timeline__item timeline__item--right reveal d1">
+          <div class="timeline__dot">
+            <span class="timeline__number">01</span>
+          </div>
+          <div class="timeline__card">
+            <div class="timeline__card-img">
+              <img src="assets/images/melukis-ikatan.jpg" alt="Melukis Ikatan" loading="lazy" />
             </div>
-            <div class="timeline__card">
-              <div class="timeline__card-img">
-                <img
-                  src="assets/images/melukis-ikatan.jpg"
-                  alt="Melukis Ikatan"
-                  loading="lazy"
-                />
-              </div>
-              <div class="timeline__card-body">
-                <span class="timeline__year">2022</span>
-                <h3 class="timeline__title">Journey Began</h3>
-                <p class="timeline__desc">
-                  Enrolled at Institut Seni Budaya Indonesia Bandung, combining
-                  academic rigor with hands-on production experience.
-                </p>
-                <div class="timeline__films">
-                  <div class="timeline__film">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    >
-                      <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
-                    </svg>
-                    <span>Melukis Ikatan</span>
-                  </div>
+            <div class="timeline__card-body">
+              <span class="timeline__year">2022</span>
+              <h3 class="timeline__title">Journey Began</h3>
+              <p class="timeline__desc">
+                Enrolled at Institut Seni Budaya Indonesia Bandung, combining
+                academic rigor with hands-on production experience.
+              </p>
+              <div class="timeline__films">
+                <div class="timeline__film">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
+                  </svg>
+                  <span>Melukis Ikatan</span>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="timeline__item timeline__item--left reveal d2">
-            <div class="timeline__dot">
-              <span class="timeline__number">02</span>
+        <div class="timeline__item timeline__item--left reveal d2">
+          <div class="timeline__dot">
+            <span class="timeline__number">02</span>
+          </div>
+          <div class="timeline__card">
+            <div class="timeline__card-img">
+              <img src="assets/images/rasindeu.jpg" alt="Rasindeu" loading="lazy" />
             </div>
-            <div class="timeline__card">
-              <div class="timeline__card-img">
-                <img
-                  src="assets/images/rasindeu.jpg"
-                  alt="Rasindeu"
-                  loading="lazy"
-                />
-              </div>
-              <div class="timeline__card-body">
-                <span class="timeline__year">2023</span>
-                <h3 class="timeline__title">Cultural Film Portfolio</h3>
-                <p class="timeline__desc">
-                  Expanded into culturally significant projects rooted in
-                  Sundanese heritage and modern cinema.
-                </p>
-                <div class="timeline__films">
-                  <div class="timeline__film">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    >
-                      <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
-                    </svg>
-                    <span>Rasindeu</span>
-                  </div>
-                  <div class="timeline__film">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    >
-                      <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
-                    </svg>
-                    <span>Kujang Sasaka</span>
-                  </div>
-                  <div class="timeline__film">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    >
-                      <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
-                    </svg>
-                    <span>Seperti Sebuah Nama</span>
-                  </div>
+            <div class="timeline__card-body">
+              <span class="timeline__year">2023</span>
+              <h3 class="timeline__title">Cultural Film Portfolio</h3>
+              <p class="timeline__desc">
+                Expanded into culturally significant projects rooted in
+                Sundanese heritage and modern cinema.
+              </p>
+              <div class="timeline__films">
+                <div class="timeline__film">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
+                  </svg>
+                  <span>Rasindeu</span>
+                </div>
+                <div class="timeline__film">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
+                  </svg>
+                  <span>Kujang Sasaka</span>
+                </div>
+                <div class="timeline__film">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
+                  </svg>
+                  <span>Seperti Sebuah Nama</span>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="timeline__item timeline__item--right reveal d3">
-            <div class="timeline__dot">
-              <span class="timeline__number">03</span>
+        <div class="timeline__item timeline__item--right reveal d3">
+          <div class="timeline__dot">
+            <span class="timeline__number">03</span>
+          </div>
+          <div class="timeline__card">
+            <div class="timeline__card-img">
+              <img src="assets/images/musicians-requiem.jpg" alt="A Musician's Requiem" loading="lazy" />
             </div>
-            <div class="timeline__card">
-              <div class="timeline__card-img">
-                <img
-                  src="assets/images/musicians-requiem.jpg"
-                  alt="A Musician's Requiem"
-                  loading="lazy"
-                />
-              </div>
-              <div class="timeline__card-body">
-                <span class="timeline__year">2024</span>
-                <h3 class="timeline__title">Multiple Film Productions</h3>
-                <p class="timeline__desc">
-                  Produced several short films, managing budgets and creative
-                  teams. Diversified into podcasts and game shows.
-                </p>
-                <div class="timeline__films">
-                  <div class="timeline__film">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    >
-                      <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
-                    </svg>
-                    <span>A Musician's Requiem</span>
-                  </div>
-                  <div class="timeline__film">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    >
-                      <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
-                    </svg>
-                    <span>Kang's Birthday</span>
-                  </div>
+            <div class="timeline__card-body">
+              <span class="timeline__year">2024</span>
+              <h3 class="timeline__title">Multiple Film Productions</h3>
+              <p class="timeline__desc">
+                Produced several short films, managing budgets and creative
+                teams. Diversified into podcasts and game shows.
+              </p>
+              <div class="timeline__films">
+                <div class="timeline__film">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
+                  </svg>
+                  <span>A Musician's Requiem</span>
+                </div>
+                <div class="timeline__film">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L9 7H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
+                  </svg>
+                  <span>Kang's Birthday</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ========== CONTACT ========== -->
-    <section class="contact section-pad" id="contact" aria-label="Contact">
-      <div class="container">
-        <div class="contact__grid">
-          <!-- Left column -->
-          <div class="contact__left reveal">
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials section-pad" id="testimonials" aria-label="Client Testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="heading-lg">Client Voices</h2>
+        <p class="subtitle">Impact &bull; Collaboration &bull; Results</p>
+        <hr class="section-divider" />
+      </div>
+
+      <div class="testimonials__grid">
+        <!-- Testimonial 1 -->
+        <article class="testimonial-card reveal d1">
+          <div class="testimonial-card__quote-icon">
+            <!-- Quote SVG -->
+            <svg viewBox="0 0 24 24" fill="currentColor" opacity="0.1">
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+          </div>
+          <p class="testimonial-card__text">
+            "Working with Stanley was a transformative experience for our film. His ability to balance creative vision
+            with rigorous production discipline ensured we hit every milestone without compromising the story's
+            emotional core. A true professional."
+          </p>
+          <div class="testimonial-card__client">
+            <div class="testimonial-card__avatar">
+              <span class="testimonial-card__initials">RD</span>
+            </div>
+            <div class="testimonial-card__info">
+              <h4 class="testimonial-card__name">Riza Aditya</h4>
+              <p class="testimonial-card__role">Director, Buana Film</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Testimonial 2 -->
+        <article class="testimonial-card reveal d2">
+          <div class="testimonial-card__quote-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" opacity="0.1">
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+          </div>
+          <p class="testimonial-card__text">
+            "Stanley doesn't just manage budgets and schedules; he actively elevates the storytelling. His strategic
+            insights during pre-production saved us significant resources, which we then redirected to enhance the final
+            visual quality. Exceptional impact."
+          </p>
+          <div class="testimonial-card__client">
+            <div class="testimonial-card__avatar">
+              <span class="testimonial-card__initials">AS</span>
+            </div>
+            <div class="testimonial-card__info">
+              <h4 class="testimonial-card__name">Ariya Santoso</h4>
+              <p class="testimonial-card__role">Independent Filmmaker</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Testimonial 3 -->
+        <article class="testimonial-card reveal d3">
+          <div class="testimonial-card__quote-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" opacity="0.1">
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+          </div>
+          <p class="testimonial-card__text">
+            "When producing the cultural documentary, we needed someone who respected the heritage while driving modern
+            production standards. Stanley delivered perfectly. His leadership on set brought out the absolute best in
+            our crew and talents."
+          </p>
+          <div class="testimonial-card__client">
+            <div class="testimonial-card__avatar">
+              <span class="testimonial-card__initials">MD</span>
+            </div>
+            <div class="testimonial-card__info">
+              <h4 class="testimonial-card__name">Maya Dinata</h4>
+              <p class="testimonial-card__role">Executive Producer</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BLOG PREVIEW ========== -->
+  <section class="blog-preview section-pad" id="blog" aria-label="Latest Insights">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="heading-lg">Latest Insights</h2>
+        <p class="subtitle">Perspectives &bull; Behind The Scenes &bull; Industry Thoughts</p>
+        <hr class="section-divider" />
+      </div>
+
+      <div class="blog-listing__grid" style="margin-bottom: 40px;">
+        <!-- Article 1 -->
+        <article class="blog-card reveal d1">
+          <a href="blog/art-of-storytelling/" class="blog-card__link">
+            <div class="blog-card__img-wrap">
+              <img src="assets/images/melukis-ikatan.jpg" alt="The Art of Storytelling" class="blog-card__img"
+                loading="lazy" />
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__date">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  Oct 12, 2024
+                </span>
+                <span class="blog-card__category">Production</span>
+              </div>
+              <h2 class="blog-card__title">The Art of Storytelling in Modern Independent Cinema</h2>
+              <p class="blog-card__excerpt">Discover the intricate balance between emotional depth and practical budgets
+                when crafting independent films.</p>
+            </div>
+            <div class="blog-card__footer" style="padding: 0 24px 24px;">
+              <div class="blog-card__readmore">
+                Read More
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-card reveal d2">
+          <a href="blog/preserving-cultural-heritage/" class="blog-card__link">
+            <div class="blog-card__img-wrap">
+              <img src="assets/images/rasindeu.jpg" alt="Cultural Heritage" class="blog-card__img" loading="lazy" />
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__date">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  Sep 05, 2024
+                </span>
+                <span class="blog-card__category">Culture</span>
+              </div>
+              <h2 class="blog-card__title">Preserving Cultural Heritage Through the Lens</h2>
+              <p class="blog-card__excerpt">How we integrated authentic traditions into a modern cinematic format
+                without losing the soul of the mythos.</p>
+            </div>
+            <div class="blog-card__footer" style="padding: 0 24px 24px;">
+              <div class="blog-card__readmore">
+                Read More
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card reveal d3">
+          <a href="blog/navigating-film-finance/" class="blog-card__link">
+            <div class="blog-card__img-wrap">
+              <img src="assets/images/musicians-requiem.jpg" alt="Film Finance" class="blog-card__img" loading="lazy" />
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__date">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  Aug 22, 2024
+                </span>
+                <span class="blog-card__category">Business</span>
+              </div>
+              <h2 class="blog-card__title">Navigating Film Finance in South East Asia</h2>
+              <p class="blog-card__excerpt">A comprehensive look into securing funding, co-production treaties, and
+                maximizing ROI for localized projects.</p>
+            </div>
+            <div class="blog-card__footer" style="padding: 0 24px 24px;">
+              <div class="blog-card__readmore">
+                Read More
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <div class="text-center reveal d3" style="text-align: center;">
+        <a href="blog/" class="btn btn--outline"
+          style="border: 1px solid var(--gold); color: var(--gold); padding: 12px 32px; border-radius: 4px; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; transition: all 0.3s;">
+          View All Articles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact section-pad" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="contact__grid">
+        <!-- Left column -->
+        <div class="contact__left reveal">
+          <div class="contact__form-card">
             <h2 class="heading-lg contact__title">Let&rsquo;s Work Together</h2>
             <p class="contact__text">
               I help bring stories to life not only technically, but
@@ -755,200 +714,202 @@
               impact. Let's collaborate and bring your story to life with
               impact.
             </p>
-            <div class="contact__cta-wrap">
-              <a
-                href="mailto:kaisarstanley@email.com"
-                class="btn"
-                id="contactCta"
-              >
-                Start a Project
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
+            <form id="contactForm" class="contact__form">
+              <div class="contact__form-row">
+                <div class="form-group">
+                  <input type="text" id="formName" placeholder="NAME" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" id="formEmail" placeholder="EMAIL" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <select id="formService" required>
+                  <option value="" disabled selected>SERVICE INTEREST</option>
+                  <option value="Film Production">Film Production</option>
+                  <option value="Creative Direction">Creative Direction</option>
+                  <option value="Strategic Film Marketing">Strategic Marketing</option>
+                  <option value="Collaboration">Collaboration</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea id="formMessage" placeholder="How can we help bring your story to life?" rows="4"
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn btn--whatsapp">
+                Send Message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn__icon">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                 </svg>
-              </a>
-            </div>
+              </button>
+            </form>
           </div>
+        </div>
 
-          <!-- Right column: info cards -->
-          <div class="contact__info reveal d2">
-            <a
-              href="tel:+6281234567890"
-              class="contact__card"
-              id="contactPhone"
-            >
-              <div class="contact__card-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                >
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <p class="contact__card-label">Phone</p>
-                <p class="contact__card-value">+62 812-3456-7890</p>
-              </div>
-            </a>
+        <!-- Right column: info cards -->
+        <div class="contact__info reveal d2">
+          <a href="tel:+6281234567890" class="contact__card" id="contactPhone">
+            <div class="contact__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div>
+              <p class="contact__card-label">Phone</p>
+              <p class="contact__card-value">+62 812-3456-7890</p>
+            </div>
+          </a>
 
-            <a
-              href="mailto:kaisarstanley@email.com"
-              class="contact__card"
-              id="contactEmail"
-            >
-              <div class="contact__card-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                >
-                  <path
-                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-              </div>
-              <div>
-                <p class="contact__card-label">Email</p>
-                <p class="contact__card-value">kaisarstanley@email.com</p>
-              </div>
-            </a>
+          <a href="mailto:kaisarstanley@email.com" class="contact__card" id="contactEmail">
+            <div class="contact__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div>
+              <p class="contact__card-label">Email</p>
+              <p class="contact__card-value">kaisarstanley@email.com</p>
+            </div>
+          </a>
 
-            <a
-              href="https://instagram.com/kaisarstanley"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact__card"
-              id="contactInstagram"
-            >
-              <div class="contact__card-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                >
-                  <rect x="2" y="2" width="20" height="20" rx="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-              </div>
-              <div>
-                <p class="contact__card-label">Instagram</p>
-                <p class="contact__card-value">@kaisarstanley</p>
-              </div>
-            </a>
+          <a href="https://instagram.com/kaisarstanley" target="_blank" rel="noopener noreferrer" class="contact__card"
+            id="contactInstagram">
+            <div class="contact__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </div>
+            <div>
+              <p class="contact__card-label">Instagram</p>
+              <p class="contact__card-value">@kaisarstanley</p>
+            </div>
+          </a>
 
-            <div class="contact__card">
-              <div class="contact__card-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div>
-                <p class="contact__card-label">Location</p>
-                <p class="contact__card-value">Bandung, Indonesia</p>
-              </div>
+          <div class="contact__card">
+            <div class="contact__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <p class="contact__card-label">Location</p>
+              <p class="contact__card-value">Bandung, Indonesia</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer" role="contentinfo">
-      <div class="container">
-        <p class="footer__text">
-          &copy; 2024 Kaisar Stanley Eleazar. All rights reserved.
-        </p>
-      </div>
-    </footer>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p class="footer__text">
+        &copy; 2024 Kaisar Stanley Eleazar. All rights reserved.
+      </p>
+    </div>
+  </footer>
 
-    <!-- ========== WHATSAPP FLOAT ========== -->
-    <a
-      href="https://wa.me/6281234567890"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="whatsapp-float"
-      id="whatsappFloat"
-      aria-label="Chat on WhatsApp"
-    >
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.174.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.174-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-        />
-      </svg>
-      <span class="whatsapp-float__tooltip">Chat me on WhatsApp</span>
-    </a>
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
 
-    <!-- ========== CHATBOT TRIGGER ========== -->
-    <button class="chatbot-trigger" id="chatbotTrigger" aria-label="Open chat">
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-      >
-        <path
-          d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-        />
-      </svg>
-    </button>
+  <!-- ========== WHATSAPP FLOAT ========== -->
+  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+    id="whatsappFloat" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.174.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.174-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+    <span class="whatsapp-float__tooltip">Chat me on WhatsApp</span>
+  </a>
 
-    <!-- ========== CHATBOT WINDOW ========== -->
-    <div class="chatbot" id="chatbot">
-      <div class="chatbot__header">
-        <span class="chatbot__header-title">KSE Assistant</span>
-        <button
-          class="chatbot__close"
-          id="chatbotClose"
-          aria-label="Close chat"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-          >
+  <!-- ========== CHATBOT TRIGGER ========== -->
+  <button class="chatbot-trigger" id="chatbotTrigger" aria-label="Open chat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  </button>
+
+  <!-- ========== CHATBOT WINDOW ========== -->
+  <div class="chatbot" id="chatbot">
+    <div class="chatbot__header">
+      <span class="chatbot__header-title">KSE Assistant</span>
+      <button class="chatbot__close" id="chatbotClose" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div class="chatbot__messages" id="chatbotMessages">
+      <!-- Messages injected by JS -->
+    </div>
+    <div class="chatbot__options" id="chatbotOptions">
+      <!-- Options injected by JS -->
+    </div>
+    <div class="chatbot__input">
+      <input type="text" id="chatbotInput" placeholder="Ask about films, contact, etc..."
+        aria-label="Type your message">
+      <button id="chatbotSend" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="22" y1="2" x2="11" y2="13" />
+          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== PORTFOLIO MODAL ========== -->
+  <div id="portfolioModal" class="modal" aria-hidden="true">
+    <div class="modal__overlay" id="modalOverlay"></div>
+    <div class="modal__container">
+      <div class="modal__content reveal">
+        <button class="modal__close" id="modalClose" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
-      </div>
-      <div class="chatbot__messages" id="chatbotMessages">
-        <!-- Messages injected by JS -->
-      </div>
-      <div class="chatbot__options" id="chatbotOptions">
-        <!-- Options injected by JS -->
+
+        <div class="modal__grid">
+          <div class="modal__img-wrap">
+            <img src="" alt="Film Cover" id="modalImage" class="modal__img">
+          </div>
+          <div class="modal__body">
+            <div class="modal__meta">
+              <span id="modalCategory" class="modal__category">Drama</span>
+              <span id="modalYear" class="modal__year">2024</span>
+            </div>
+            <h2 id="modalTitle" class="modal__title">Film Title</h2>
+            <p id="modalRole" class="modal__role">Executive Producer</p>
+            <div class="modal__divider"></div>
+            <p id="modalFullDesc" class="modal__desc">
+              Detailed film description goes here...
+            </p>
+            <button class="btn modal__btn" id="modalActionBtn">Watch Trailer (Soon)</button>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <script src="js/particles.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+  <!-- Cursor Glow Effect -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <script src="js/particles.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>

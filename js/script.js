@@ -44,12 +44,20 @@
   const hamburger = $('#hamburger');
   const navItems = $$('.navbar__link');
   const sections = $$('section[id]');
+  const scrollTopBtn = $('#scrollTop');
 
   function handleNavScroll() {
     const y = window.scrollY;
 
     // Solid bg
-    navbar.classList.toggle('scrolled', y > 80);
+    if (!navbar.classList.contains('navbar--solid')) {
+      navbar.classList.toggle('scrolled', y > 80);
+    }
+
+    // Scroll Top Visibility
+    if (scrollTopBtn) {
+      scrollTopBtn.classList.toggle('visible', y > 400);
+    }
 
     // Active section
     let current = '';
@@ -92,6 +100,75 @@
       window.scrollTo({ top: target.offsetTop - navH, behavior: 'smooth' });
     });
   });
+
+  // Scroll Top Click
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ────────────────────────────────────────────
+     PORTFOLIO MODAL MANAGER
+  ──────────────────────────────────────────── */
+  const portfolioModal = $('#portfolioModal');
+  if (portfolioModal) {
+    const modalClose = $('#modalClose');
+    const modalOverlay = $('#modalOverlay');
+    const blogCards = $$('.portfolio__card');
+
+    const mImage = $('#modalImage');
+    const mTitle = $('#modalTitle');
+    const mRole = $('#modalRole');
+    const mCategory = $('#modalCategory');
+    const mYear = $('#modalYear');
+    const mFullDesc = $('#modalFullDesc');
+
+    function openModal(card) {
+      // Extract data
+      const img = $('img', card).src;
+      const title = $('.portfolio__card-title', card).textContent;
+      const role = $('.portfolio__card-role', card).textContent;
+      const category = card.dataset.category;
+      const year = card.dataset.year;
+      const fullDesc = card.dataset.fullDesc;
+
+      // Populate Modal
+      mImage.src = img;
+      mTitle.textContent = title;
+      mRole.textContent = role;
+      mCategory.textContent = category;
+      mYear.textContent = year;
+      mFullDesc.textContent = fullDesc;
+
+      // Show Modal
+      portfolioModal.classList.add('open');
+      body.style.overflow = 'hidden';
+
+      // Internal reveal animation inside modal
+      const content = $('.modal__content', portfolioModal);
+      content.classList.remove('visible');
+      setTimeout(() => content.classList.add('visible'), 50);
+    }
+
+    function closeModal() {
+      portfolioModal.classList.remove('open');
+      body.style.overflow = '';
+    }
+
+    blogCards.forEach(card => {
+      const cta = $('.portfolio__card-cta', card);
+      if (cta) {
+        cta.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal(card);
+        });
+      }
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+  }
 
   /* ────────────────────────────────────────────
      HERO 3D PARALLAX (Mouse)
@@ -250,7 +327,7 @@
 
   const chatResponses = {
     greeting: {
-      text: "Hi! 👋 I'm Kaisar's portfolio assistant. How can I help you today?",
+      text: "Halo! 👋 Saya asisten virtual Stanley. Ada yang bisa saya bantu hari ini? Bapak bisa tanya tentang film, pengalaman, atau kontak Stanley.",
       options: [
         { label: '🎬 View Portfolio', action: 'portfolio' },
         { label: '📞 Contact Info', action: 'contact' },
@@ -290,12 +367,25 @@
     }
   };
 
+  const chatbotInput = $('#chatbotInput');
+  const chatbotSend = $('#chatbotSend');
+
   function addMessage(text, type) {
     const msg = document.createElement('div');
     msg.className = `chatbot__msg chatbot__msg--${type}`;
     msg.textContent = text;
     chatbotMessages.appendChild(msg);
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    return msg;
+  }
+
+  function showTypingIndicator() {
+    const indicator = document.createElement('div');
+    indicator.className = 'chatbot__msg chatbot__msg--bot chatbot__loading';
+    indicator.innerHTML = '<span></span><span></span><span></span>';
+    chatbotMessages.appendChild(indicator);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    return indicator;
   }
 
   function showOptions(options) {
@@ -304,58 +394,159 @@
       const btn = document.createElement('button');
       btn.className = 'chatbot__option';
       btn.textContent = opt.label;
-      btn.addEventListener('click', () => handleChatAction(opt));
+      btn.onclick = () => {
+        handleChatAction(opt);
+      };
       chatbotOptions.appendChild(btn);
     });
   }
 
   function handleChatAction(opt) {
-    // Show user message
     addMessage(opt.label, 'user');
-
-    // Handle scroll actions
-    if (opt.action.startsWith('scroll_')) {
-      const sectionId = opt.action.replace('scroll_', '');
-      const target = $(`#${sectionId}`);
-      if (target) {
-        setTimeout(() => {
+    chatbotOptions.innerHTML = '';
+    
+    const indicator = showTypingIndicator();
+    
+    setTimeout(() => {
+      indicator.remove();
+      
+      if (opt.action.startsWith('scroll_')) {
+        const sectionId = opt.action.replace('scroll_', '');
+        const target = $(`#${sectionId}`);
+        if (target) {
           chatbot.classList.remove('open');
-          const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'));
+          const navH = 80;
           window.scrollTo({ top: target.offsetTop - navH, behavior: 'smooth' });
-        }, 400);
+        }
+        return;
       }
-      return;
-    }
 
-    // Show bot response
-    const response = chatResponses[opt.action];
-    if (response) {
-      setTimeout(() => {
-        addMessage(response.text, 'bot');
-        showOptions(response.options);
-      }, 500);
-    }
+      const resp = chatResponses[opt.action];
+      if (resp) {
+        addMessage(resp.text, 'bot');
+        showOptions(resp.options);
+      }
+    }, 800);
   }
 
-  function openChatbot() {
-    chatbot.classList.add('open');
-    if (chatbotMessages.children.length === 0) {
-      addMessage(chatResponses.greeting.text, 'bot');
-      showOptions(chatResponses.greeting.options);
-    }
+  function handleUserInput() {
+    const input = chatbotInput.value.trim().toLowerCase();
+    if (!input) return;
+
+    addMessage(chatbotInput.value, 'user');
+    chatbotInput.value = '';
+    chatbotOptions.innerHTML = '';
+    
+    const indicator = showTypingIndicator();
+
+    setTimeout(() => {
+      indicator.remove();
+      
+      let matchedAction = 'default';
+      
+      if (input.includes('portfolio') || input.includes('film') || input.includes('movie') || input.includes('karya')) matchedAction = 'portfolio';
+      else if (input.includes('contact') || input.includes('email') || input.includes('phone') || input.includes('wa') || input.includes('hubung')) matchedAction = 'contact';
+      else if (input.includes('about') || input.includes('siapa') || input.includes('stanley') || input.includes('profil')) matchedAction = 'about';
+      else if (input.includes('collab') || input.includes('kerjasama') || input.includes('kerja') || input.includes('hire')) matchedAction = 'collab';
+      else if (input.includes('hi') || input.includes('halo') || input.includes('hello') || input.includes('hallo') || input.includes('hai') || input.includes('heii') || input.includes('hey')) matchedAction = 'greeting';
+
+      if (matchedAction === 'default') {
+        addMessage("I'm not sure I understand. Try asking about Stanley's films, his profile, or contact info.", 'bot');
+        showOptions(chatResponses.greeting.options);
+      } else {
+        const resp = chatResponses[matchedAction];
+        addMessage(resp.text, 'bot');
+        showOptions(resp.options);
+      }
+    }, 1000);
   }
 
   chatbotTrigger.addEventListener('click', () => {
     if (chatbot.classList.contains('open')) {
       chatbot.classList.remove('open');
     } else {
-      openChatbot();
+      chatbot.classList.add('open');
+      if (chatbotMessages.children.length === 0) {
+        addMessage(chatResponses.greeting.text, 'bot');
+        showOptions(chatResponses.greeting.options);
+      }
     }
   });
 
   chatbotClose.addEventListener('click', () => {
     chatbot.classList.remove('open');
   });
+
+  chatbotInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleUserInput();
+  });
+
+  chatbotSend.addEventListener('click', handleUserInput);
+
+  /* ────────────────────────────────────────────
+     CURSOR GLOW (LANTERN)
+  ──────────────────────────────────────────── */
+  const cursorGlow = $('#cursorGlow');
+  if (cursorGlow) {
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Smooth following with RequestAnimationFrame
+    function animateCursor() {
+      // Lerp for smoothness
+      currentX += (mouseX - currentX) * 0.1;
+      currentY += (mouseY - currentY) * 0.1;
+      
+      cursorGlow.style.left = `${currentX}px`;
+      cursorGlow.style.top = `${currentY}px`;
+      
+      requestAnimationFrame(animateCursor);
+    }
+    
+    animateCursor();
+
+    // Hide when mouse leaves window
+    document.addEventListener('mouseleave', () => {
+      cursorGlow.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      cursorGlow.style.opacity = '1';
+    });
+  }
+
+  /* ────────────────────────────────────────────
+     CONTACT FORM (WHATSAPP)
+  ──────────────────────────────────────────── */
+  const contactForm = $('#contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = $('#formName').value;
+      const email = $('#formEmail').value;
+      const service = $('#formService').value;
+      const message = $('#formMessage').value;
+      
+      const phone = '6281234567890'; // Destination number
+      
+      const whatsappText = `*Halo Stanley!*%0A` +
+        `Ada pesan baru dari website portfolio:%0A%0A` +
+        `*Nama:* ${name}%0A` +
+        `*Email:* ${email}%0A` +
+        `*Layanan:* ${service}%0A` +
+        `*Pesan:* ${message}`;
+        
+      const waUrl = `https://wa.me/${phone}?text=${whatsappText}`;
+      window.open(waUrl, '_blank');
+    });
+  }
 
   /* ────────────────────────────────────────────
      KEYBOARD ACCESSIBILITY
