@@ -132,6 +132,7 @@
       const category = card.dataset.category;
       const year = card.dataset.year;
       const fullDesc = card.dataset.fullDesc;
+      const videoUrl = card.dataset.videoUrl;
 
       // Populate Modal
       mImage.src = img;
@@ -140,6 +141,15 @@
       mCategory.textContent = category;
       mYear.textContent = year;
       mFullDesc.textContent = fullDesc;
+      
+      const mActionBtn = $('#modalActionBtn');
+      if (videoUrl) {
+        mActionBtn.textContent = 'Watch Video';
+        mActionBtn.onclick = () => window.open(videoUrl, '_blank');
+      } else {
+        mActionBtn.textContent = 'Watch Trailer (Soon)';
+        mActionBtn.onclick = null;
+      }
 
       // Show Modal
       portfolioModal.classList.add('open');
