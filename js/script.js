@@ -355,7 +355,7 @@
       ]
     },
     contact: {
-      text: "You can reach Kaisar via:\n📧 kaisarstanley@email.com\n📱 +62 812-3456-7890\n📸 @kaisarstanley on Instagram\n\nWould you like to go to the contact section?",
+      text: "You can reach Kaisar via:\n📧 stanley.simanjuntak@gmail.com\n📱 +62 812-1837-5465\n📸 @kaisar.stanley on Instagram\n\nWould you like to go to the contact section?",
       options: [
         { label: 'Go to Contact', action: 'scroll_contact' },
         { label: '⬅ Back to Menu', action: 'greeting' }
@@ -546,14 +546,12 @@
       const service = $('#formService').value;
       const message = $('#formMessage').value;
       
-      const phone = '6281234567890'; // Destination number
+      const phone = '6281218375465'; // Destination number
       
-      const whatsappText = `*Halo Stanley!*%0A` +
-        `Ada pesan baru dari website portfolio:%0A%0A` +
-        `*Nama:* ${name}%0A` +
-        `*Email:* ${email}%0A` +
-        `*Layanan:* ${service}%0A` +
-        `*Pesan:* ${message}`;
+      const whatsappText = `Halo Stanley! 👋 Saya *${name}*,%0A%0A` +
+        `Saya tertarik untuk berdiskusi mengenai *${service}*. Berikut pesan saya:%0A` +
+        `"${message}"%0A%0A` +
+        `Bapak bisa hubungi saya kembali di: ${email}`;
         
       const waUrl = `https://wa.me/${phone}?text=${whatsappText}`;
       window.open(waUrl, '_blank');
