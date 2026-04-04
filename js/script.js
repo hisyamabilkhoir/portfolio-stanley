@@ -194,19 +194,21 @@
       const y = (e.clientY - rect.top) / rect.height - 0.5;
 
       requestAnimationFrame(() => {
-        // Background shifts opposite direction for depth
-        heroBg.style.transform = `translate(${-x * 20}px, ${-y * 15}px)`;
+        // Background shifts opposite direction for depth (check if exists)
+        if (heroBg) {
+          heroBg.style.transform = `translate(${-x * 20}px, ${-y * 15}px)`;
+        }
 
-        // Text also has subtle parallax and light reflection
+        // Text also has subtle parallax
         const heroText = document.querySelector('.hero__text');
         const heroTitle = document.querySelector('.hero__title');
         if (heroText) {
           heroText.style.transform = `translate(${x * 12}px, ${y * 6}px)`;
         }
         
-        // Premium: Shine/Reflection reacts to mouse
+        // Premium: Shine reacts to mouse
         if (heroTitle) {
-          const moveX = x * 100; // Percentage shift
+          const moveX = x * 100;
           const moveY = y * 100;
           heroTitle.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
         }
@@ -220,7 +222,7 @@
     });
 
     hero.addEventListener('mouseleave', () => {
-      heroBg.style.transform = 'translate(0, 0)';
+      if (heroBg) heroBg.style.transform = 'translate(0, 0)';
       if (heroPortrait) heroPortrait.style.transform = '';
     });
   }

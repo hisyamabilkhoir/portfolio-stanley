@@ -467,10 +467,19 @@ button {
   align-items: center;
   overflow: hidden;
   background-color: #050a14;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: -50px; /* Bleed for parallax */
   background-image: url("../assets/images/hero-bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+  transform: translate(0, 0); /* Initial state */
+  will-change: transform;
 }
 
 .hero__particles {
