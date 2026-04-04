@@ -346,7 +346,7 @@
       ]
     },
     portfolio: {
-      text: "Kaisar has produced 6 films including Melukis Ikatan, Rasindeu, and A Musician's Requiem. Would you like to see the portfolio section?",
+      text: "Kaisar has produced 6 films including Melukis Ikatan, Oasis Bandung Live Forever, and A Musician's Requiem. Would you like to see the portfolio section?",
       options: [
         { label: 'Go to Portfolio', action: 'scroll_portfolio' },
         { label: '⬅ Back to Menu', action: 'greeting' }
