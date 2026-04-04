@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /assets/images/
+
+Sitemap: https://kaisarstanley.web.id/sitemap.xml
